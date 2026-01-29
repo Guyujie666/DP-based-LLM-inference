@@ -1,4 +1,4 @@
-# Codes for a DP-based LLM split inference framework
+# Codes for a DP-based LLM split inference framework based on Pangu-Embedded-7B and Ascend 910B
 
 ## Download
 
@@ -9,7 +9,7 @@ python download.py
 
 ## Training
 
-### Step 1: Train the Encoder–Decoder Architecture
+### Step 1: Train the Encoder–Decoder
 
 Run:
 
@@ -21,16 +21,14 @@ This script trains the encoder–decoder model used for split inference.
 
 ---
 
-### Step 2: Search for Privacy Parameter μ and Train the Soft Prompt
+### Step 2: Search for Privacy Parameter
 
 1. Perform a **binary search** over the DP mechanism parameter **μ** to reach the target attack success rate (ASR).
-2. For the selected **μ**, train the corresponding soft prompt:
+2. For the selected **μ**, train the following script:
 
 ```bash
 bash train_soft.sh
 ```
-
-Be sure to replace `--emb_ckpt` with the path where you saved the encoder–decoder weights from **Step 1**.
 
 ---
 
@@ -38,7 +36,7 @@ Be sure to replace `--emb_ckpt` with the path where you saved the encoder–deco
 
 ### Evaluate Coherence Between Generated Text and Ground Truth
 
-To compute the coherence score between model generations and reference text, run:
+Run:
 
 ```bash
 bash test_cse.sh
