@@ -1,21 +1,4 @@
-# Codes for *Differentially Private and Communication-Efficient Large Language Model Split Inference via Stochastic Quantization and Soft Prompt* (Pangu)
-
-## Environment Setup
-
-Use the official **`pangu`** environment with: **`peft==0.17.1`**
-
-
-Place all code inside: **`openPangu-Embedded-7B-V1.1`**
-
-
-Set the environment variable:
-
-```bash
-export PANGU_PATH=/path/to/pangu
-export HF_ENDPOINT=https://hf-mirror.com
-export HF_HOME=/data/huggingface
-````
----
+# Codes for a DP-based LLM split inference framework
 
 ## Download
 
@@ -71,7 +54,7 @@ Enter the `inferdpt` directory:
 
 ```bash
 cd inferdpt
-python export_vocab.py --model openPangu-Embedded-7B-V1.1
+python export_vocab.py
 ```
 
 ---
